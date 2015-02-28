@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int numDecodings(string s) {
+	if(s.empty()) return 0;
+
+	int num = s.size();
+	int *N = new int[num];
+	int ret = 0;
+	int d = 0;
+
+	(s[0] == '0') ?  (N[0] = 0):(N[0] = 1);
+
+	for(int i = 1; i < num; i++) {
+		d = (s[i-1]-'0') * 10 + (s[i]-'0');
+		if(s[i-1] == '0' || d > 26) {
+			N[i] = N[i-1];
+		} else {
+			N[i] = N[i-1] + 1;
+		} 
+	}
+
+	ret = N[num-1];
+	delete[] N;
+
+	return ret;
+}
+
+int main(int argc, char *argv[])
+{
+	string a("12");
+	cout << numDecodings(a) << endl;
+
+	string b("0");
+	cout << numDecodings(b) << endl;
+
+	string c("12817");
+	cout << numDecodings(c) << endl;
+
+	string d("8");
+	cout << numDecodings(d) << endl;
+
+	string f("894");
+	cout << numDecodings(f) << endl;
+
+	string g("433");
+	cout << numDecodings(g) << endl;
+	return 0;
+}
