@@ -2,6 +2,11 @@
  * Reverse Interger
  * HarryWu
  * 2014-10-29 9:23 pm
+ * url: https://oj.leetcode.com/problems/reverse-integer/
+ *
+ * Reverse digits of an integer.
+ * Example1: x = 123, return 321
+ * Example2: x = -123, return -321
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,6 +23,7 @@ int reverse_01(int x) {
 	}
 	while(x != 0)
 	{
+
 		ret = ret * 10 + x % 10;
 		x = x / 10;	
 	}
@@ -29,6 +35,10 @@ int reverse(int x) {
 
 	while(x != 0)
 	{
+		if(ret > INT_MAX/10 || (ret == INT_MAX/10 && x%10 > 7) 
+			|| ret < INT_MIN/10 || (ret == INT_MIN/10 && x%10 < -8)) {
+			return 0;
+		}
 		ret = ret * 10 + x % 10;
 		x = x / 10;	
 	}
