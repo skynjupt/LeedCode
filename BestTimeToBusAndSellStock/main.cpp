@@ -13,7 +13,7 @@
 using namespace std;
 
 // p[i] = MAX{A[i]-min, Pmax} 
-// min : the min of p[0] ~ P[i-1], 
+// min : the min of A[0] ~ A[i-1], 
 // Pmax: the max profit
 int maxProfit(vector<int> &prices) {
 	if(prices.empty())

@@ -1,3 +1,22 @@
+/*
+	https://leetcode.com/problems/anagrams/
+	{
+		Given an array of strings, return all groups of strings that are anagrams.
+
+		Note: All inputs will be in lower-case.
+
+		For example:
+
+		Input:　["tea","and","ate","eat","den"]
+
+		Output:   ["tea","ate","eat"]		
+
+		Anagram（回文构词法）是指由颠倒字母顺序组成的单词
+		回文构词法有一个特点：单词里的字母的种类和数目没有改变，
+		只是改变了字母的排列顺序。
+	}
+*/
+
 #include <iostream>
 #include <vector>
 #include <unordered_map>
