@@ -1,13 +1,17 @@
 /*
-	https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+	https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
 	{
+		Follow up for "Find Minimum in Rotated Sorted Array":
+		What if duplicates are allowed?
+
+		Would this affect the run-time complexity? How and why?
 		Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 
 		(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
 
 		Find the minimum element.
 
-		You may assume no duplicate exists in the array.
+		The array may contain duplicates.
 	}
 */
 
@@ -16,28 +20,16 @@
 	
 using namespace std;
 
-#if 0
 int solve(vector<int> &num, int l, int r) {
-	if(l == r) return num[l];
-	int mid = (l+r)/2;
-	int left_min = 	solve(num, l, mid);	
-	int right_min = solve(num, mid+1, r);
-	if(left_min > right_min) {
-		return right_min;
-	} else {
-		return left_min;
-	}
-}
-#endif
-
-int solve(vector<int> &num, int l, int r) {
-	if(l == r) return num[l];
+	if(l >= r) return num[l];
 	if(num[l] < num[r]) return num[l];
 	int mid = (l+r)/2;
 	if(num[mid] > num[r]) {
 		solve(num, mid+1, r);
-	} else {
+	} else if(num[mid] < num[r]) {
 		solve(num, l, mid);
+	} else {
+		solve(num, l+1, r-1);
 	}
 }
 
