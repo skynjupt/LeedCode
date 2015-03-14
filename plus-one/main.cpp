@@ -1,3 +1,13 @@
+/*
+	https://leetcode.com/problems/plus-one/
+	{
+	Given a non-negative number represented as an array of digits, 
+	plus one to the number.
+
+	The digits are stored such that the most significant digit is at the head of the list.
+	}
+*/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -17,9 +27,9 @@ vector<int> plusOne(vector<int> &digits) {
 			digits[i] = 0;
 			if(i-1 >= 0) {
 				digits[i-1] = digits[i-1] + 1;
-			} else {
-				digits.push_back(1);
-				reverse(digits.begin(), digits.end());		
+			} else { // 0000,0000
+				digits.push_back(1); // 0000,0000,1
+				reverse(digits.begin(), digits.end()); // 1,0000,0000		
 				break;
 			}
 		} else {

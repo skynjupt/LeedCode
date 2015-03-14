@@ -1,3 +1,31 @@
+/*
+	https://leetcode.com/problems/pascals-triangle/
+	{
+Pascal's Triangle I
+		Given numRows, generate the first numRows of Pascal's triangle.
+
+		For example, given numRows = 5,
+		Return
+
+		[
+		     [1],
+		    [1,1],
+		   [1,2,1],
+		  [1,3,3,1],
+		 [1,4,6,4,1]
+		]
+
+Pascal's Triangle II 
+	Given an index k, return the kth row of the Pascal's triangle.
+
+	For example, given k = 3,
+	Return [1,3,3,1].
+	
+	}
+*/
+
+
+
 #include <iostream>
 #include <vector>
 

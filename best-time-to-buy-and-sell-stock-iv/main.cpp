@@ -15,7 +15,7 @@
 using namespace std;
 
 /*
- * P[k][i] = max{ P[k][i-1], P[k-1][j]+prices[i]-prices[j] (0<= j < i)} // k: at most i's transaction
+ * P[k][i] = max{ P[k][i-1], P[k-1][j]+prices[i]-prices[j] (0<= j < i)} // k: at most k's transaction
  * ==>    P[k][i] = max{ P[k][i-1], prices[i] + (P[k-1][j]-prices[j]) (0<= j < i)} // k: the i's transaction
  * P[0][i] = 0
  * P[k][0] = 0
